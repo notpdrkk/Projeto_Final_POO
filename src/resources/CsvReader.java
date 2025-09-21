@@ -34,7 +34,6 @@ public class CsvReader {
 				LocalDate nascimento = LocalDate.parse(campos[2], formatter);
 				double salarioBruto = Double.parseDouble(campos[3]);
 
-				funcionarioAtual = new Funcionario(nome, cpf, nascimento, salarioBruto);
 
 				boolean cpfDuplicado = funcionarios.stream().anyMatch(f -> f.getCpf().equals(cpf));
 				if (cpfDuplicado) {
@@ -57,9 +56,6 @@ public class CsvReader {
 				if (cpfDuplicado) {
 					throw new DependenteException("CPF duplicado em dependentes: " + cpf);
 				}
-
-				Dependente dependente = new Dependente(nome, cpf, nascimento, parentesco);
-				funcionarioAtual.adicionarDependente(dependente);
 			}
 		}
 
