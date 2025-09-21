@@ -1,32 +1,49 @@
 package br.com.model;
 
 import java.time.LocalDate;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Funcionario extends Pessoa {
-    private double salarioBruto;
-    private double descontoINSS;
-    private double descontoIR;
-    private Set<Dependente> dependentes = new HashSet<>();
+	private double salarioBruto;
+	private double descontoINSS;
+	private double descontoIR;
+	private List<Dependente> dependentes = new ArrayList<>();
 
-    public Funcionario(String nome, String cpf, LocalDate dataNascimento, double salarioBruto) {
-        super(nome, cpf, dataNascimento);
-        this.salarioBruto = salarioBruto;
-    }
+	public Funcionario(String nome, String cpf, LocalDate dataNascimento, double salarioBruto) {
+		super(nome, cpf, dataNascimento);
+		this.salarioBruto = salarioBruto;
+	}
 
-    public double getSalarioBruto() { return salarioBruto; }
-    public void setSalarioBruto(double salarioBruto) { this.salarioBruto = salarioBruto; }
+	public double getSalarioBruto() {
+		return salarioBruto;
+	}
 
-    public double getDescontoINSS() { return descontoINSS; }
-    public void setDescontoINSS(double descontoINSS) { this.descontoINSS = descontoINSS; }
+	public void setSalarioBruto(double salarioBruto) {
+		this.salarioBruto = salarioBruto;
+	}
 
-    public double getDescontoIR() { return descontoIR; }
-    public void setDescontoIR(double descontoIR) { this.descontoIR = descontoIR; }
+	public double getDescontoINSS() {
+		return descontoINSS;
+	}
 
-    public Set<Dependente> getDependentes() { return dependentes; }
+	public void setDescontoINSS(double descontoINSS) {
+		this.descontoINSS = descontoINSS;
+	}
 
-    public void adicionarDependente(Dependente dependente) {
-        dependentes.add(dependente);
-    }
+	public double getDescontoIR() {
+		return descontoIR;
+	}
+
+	public void setDescontoIR(double descontoIR) {
+		this.descontoIR = descontoIR;
+	}
+
+	public List<Dependente> getDependentes() {
+		return dependentes;
+	}
+
+	public void adicionarDependente(Dependente dependente) {
+		dependentes.add(dependente);
+	}
 }
